@@ -1,0 +1,26 @@
+[
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Метиз",
+    "description": "Крепежные изделия"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "name": "Адаптер оптический",
+    "description": "Оптический адаптер для соединения оптических коннекторов"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 3,
+  "fields": {
+    "name": "Инструмент",
+    "description": "Ручной инструмент для работы и хобби"
+  }
+}
+]

@@ -1,0 +1,184 @@
+[
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "name": "Молоток",
+    "description": "Забъет любой гвоздь",
+    "picture": "",
+    "category": 3,
+    "price": 100.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "name": "Винт",
+    "description": "Без отвертки не обойтись",
+    "picture": "",
+    "category": 1,
+    "price": 10.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 3,
+  "fields": {
+    "name": "Гайка",
+    "description": "У нее 6 граней",
+    "picture": "",
+    "category": 1,
+    "price": 6.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 4,
+  "fields": {
+    "name": "Шайба",
+    "description": "Плоская, но полезная",
+    "picture": "",
+    "category": 1,
+    "price": 2.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "name": "Шпилька",
+    "description": "Ничего общего с обувью",
+    "picture": "",
+    "category": 1,
+    "price": 10.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "name": "Болт",
+    "description": "Ценится сталкерами",
+    "picture": "",
+    "category": 1,
+    "price": 12.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 7,
+  "fields": {
+    "name": "Отвертка крестовая",
+    "description": "С красной ручкой",
+    "picture": "",
+    "category": 3,
+    "price": 85.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 8,
+  "fields": {
+    "name": "Отвертка шлицевая",
+    "description": "С синей ручкой",
+    "picture": "",
+    "category": 3,
+    "price": 85.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 9,
+  "fields": {
+    "name": "Разводной ключ",
+    "description": "Для ремонта сантехники",
+    "picture": "",
+    "category": 3,
+    "price": 120.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 10,
+  "fields": {
+    "name": "Гаечный ключ",
+    "description": "Для болтов и гаек",
+    "picture": "",
+    "category": 3,
+    "price": 90.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 11,
+  "fields": {
+    "name": "Адаптер LC-LC",
+    "description": "Синий и прямоугольный",
+    "picture": "",
+    "category": 2,
+    "price": 50.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 12,
+  "fields": {
+    "name": "Адаптер FC-FC",
+    "description": "Красный и круглый",
+    "picture": "",
+    "category": 2,
+    "price": 45.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 13,
+  "fields": {
+    "name": "Адаптер ST-ST",
+    "description": "Черный и круглый",
+    "picture": "",
+    "category": 2,
+    "price": 55.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 14,
+  "fields": {
+    "name": "Адаптер SС-SС",
+    "description": "Прямоугольный и с фланцем",
+    "picture": "",
+    "category": 2,
+    "price": 65.0,
+    "created_at": "2024-03-07",
+    "updated_at": "2024-03-07"
+  }
+}
+]
