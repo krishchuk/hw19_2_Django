@@ -5,11 +5,11 @@
   "fields": {
     "name": "Молоток",
     "description": "Забъет любой гвоздь",
-    "picture": "",
+    "picture": "products/molotok.webp",
     "category": 3,
     "price": 100.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -18,11 +18,11 @@
   "fields": {
     "name": "Винт",
     "description": "Без отвертки не обойтись",
-    "picture": "",
+    "picture": "products/vint.jpg",
     "category": 1,
     "price": 10.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -31,11 +31,11 @@
   "fields": {
     "name": "Гайка",
     "description": "У нее 6 граней",
-    "picture": "",
+    "picture": "products/gajka.webp",
     "category": 1,
     "price": 6.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -44,11 +44,11 @@
   "fields": {
     "name": "Шайба",
     "description": "Плоская, но полезная",
-    "picture": "",
+    "picture": "products/shajba.jpg",
     "category": 1,
     "price": 2.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -57,11 +57,11 @@
   "fields": {
     "name": "Шпилька",
     "description": "Ничего общего с обувью",
-    "picture": "",
+    "picture": "products/shpilka.jpg",
     "category": 1,
     "price": 10.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -70,11 +70,11 @@
   "fields": {
     "name": "Болт",
     "description": "Ценится сталкерами",
-    "picture": "",
+    "picture": "products/bolt.jpg",
     "category": 1,
     "price": 12.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -83,11 +83,11 @@
   "fields": {
     "name": "Отвертка крестовая",
     "description": "С красной ручкой",
-    "picture": "",
+    "picture": "products/otvertka_krestovaya.webp",
     "category": 3,
     "price": 85.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -96,11 +96,11 @@
   "fields": {
     "name": "Отвертка шлицевая",
     "description": "С синей ручкой",
-    "picture": "",
+    "picture": "products/otvertka_ploskaya.jpg",
     "category": 3,
     "price": 85.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -109,11 +109,11 @@
   "fields": {
     "name": "Разводной ключ",
     "description": "Для ремонта сантехники",
-    "picture": "",
+    "picture": "products/razvodnoj_kluch.jpg",
     "category": 3,
     "price": 120.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -122,11 +122,11 @@
   "fields": {
     "name": "Гаечный ключ",
     "description": "Для болтов и гаек",
-    "picture": "",
+    "picture": "products/gaechnij_kluch.jpg",
     "category": 3,
     "price": 90.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -135,11 +135,11 @@
   "fields": {
     "name": "Адаптер LC-LC",
     "description": "Синий и прямоугольный",
-    "picture": "",
+    "picture": "products/adapter_lc-lc.jpg",
     "category": 2,
     "price": 50.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -148,11 +148,11 @@
   "fields": {
     "name": "Адаптер FC-FC",
     "description": "Красный и круглый",
-    "picture": "",
+    "picture": "products/adapter_fc-fc.jpg",
     "category": 2,
     "price": 45.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -161,11 +161,11 @@
   "fields": {
     "name": "Адаптер ST-ST",
     "description": "Черный и круглый",
-    "picture": "",
+    "picture": "products/adapter_st-st.jpeg",
     "category": 2,
     "price": 55.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
   }
 },
 {
@@ -174,11 +174,24 @@
   "fields": {
     "name": "Адаптер SС-SС",
     "description": "Прямоугольный и с фланцем",
-    "picture": "",
+    "picture": "products/adapter_sc-sc.jpg",
     "category": 2,
     "price": 65.0,
     "created_at": "2024-03-07",
-    "updated_at": "2024-03-07"
+    "updated_at": "2024-03-17"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 18,
+  "fields": {
+    "name": "test",
+    "description": "aaaaaaaaaa bbbbbbbbbb ccccccccccc dddddddddd eeeeeeeeeee fffffffffff ggggggggggg hhhhhhhhhh jjjjjjjjjj kkkkkkkkkk llllllllll mmmmmmmmmm nnnnnnnnnn xxxxxxxxxx rrrrrrrrrr tttttttttt",
+    "picture": "",
+    "category": 2,
+    "price": 10000.0,
+    "created_at": "2024-03-17",
+    "updated_at": "2024-03-17"
   }
 }
 ]
