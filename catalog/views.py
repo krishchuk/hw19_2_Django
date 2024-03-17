@@ -3,12 +3,22 @@ import os
 
 from django.shortcuts import render
 
+from catalog.models import Category, Product
+
 
 def home(request):
-    return render(request, 'catalog/home.html')
+    products_list = Product.objects.all()
+    context = {
+        'products_list': products_list,
+        'title': "Каталог"
+    }
+    return render(request, 'catalog/home.html', context)
 
 
 def contacts(request):
+    context = {
+        'title': "Контакты"
+    }
     # Получение данных от пользователя и их сохранение в JSON
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -33,4 +43,13 @@ def contacts(request):
             with open('data.json', 'w') as file:
                 json.dump([user_contacts], file, indent=4)
 
-    return render(request, 'catalog/contacts.html')
+    return render(request, 'catalog/contacts.html', context)
+
+
+def product(request, pk):
+    item = Product.objects.get(pk=pk)
+    context = {
+        'products_list': Product.objects.filter(id=pk),
+        'title': f"Товар: {item.name}"
+    }
+    return render(request, 'catalog/product.html', context)
