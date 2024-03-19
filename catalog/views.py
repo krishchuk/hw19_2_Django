@@ -8,6 +8,8 @@ from catalog.models import Category, Product
 
 def home(request):
     products_list = Product.objects.all()
+    for prod in products_list:
+        prod.description = prod.description[0:100]
     context = {
         'products_list': products_list,
         'title': "Каталог"
