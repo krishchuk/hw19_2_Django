@@ -21,13 +21,11 @@
         </div>
     </div>
 
-<div class="row">
-    <div class="col-3 mb-4">
-        <a href="{% url 'news:news_update' object.pk %}" type="button" class="btn btn-lg btn-block btn-warning">Изменить новость</a>
+    <div class="col-12">
+        <div class="btn-group mb-4 " role="group" aria-label="Basic example">
+            <a href="{% url 'news:news_update' object.pk %}" type="button" class="btn btn-block btn-warning">Изменить новость</a>
+            <a href="{% url 'news:news_delete' object.pk %}" type="button" class="btn btn-block btn-danger">Удалить новость</a>
+        </div>
     </div>
-    <div class="col-3 mb-4">
-        <a href="{% url 'news:news_delete' object.pk %}" type="button" class="btn btn-lg btn-block btn-danger">Удалить новость</a>
-    </div>
-</div>
 
 {% endblock %}

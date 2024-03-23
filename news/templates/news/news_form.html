@@ -11,7 +11,7 @@
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button type="submit" class="btn btn-lg btn-block btn-outline-primary">
+                    <button type="submit" class="btn btn-lg btn-block btn-success mb-3">
                         {% if object %}
                             Изменить
                         {% else %}
@@ -19,6 +19,9 @@
                         {% endif %}
                     </button>
                 </form>
+                <div class="col-12">
+                    <a href="{% url 'news:news_list' %}" type="button" class="btn btn-secondary">Отмена</a>
+                </div>
             </div>
         </div>
     </div>
