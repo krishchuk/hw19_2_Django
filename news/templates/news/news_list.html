@@ -1,4 +1,5 @@
 {% extends 'catalog/base.html' %}
+{% load my_tags %}
 
 {% block content %}
 <div class="row">
@@ -13,7 +14,7 @@
             <h4 class="my-0 font-weight-normal">{{ object.title }}</h4>
         </div>
         <div class="card-body">
-            <img src="{{ object.picture  }}" class="img-thumbnail" width="500">
+            <img src="{{ object.picture | mymedia }}" class="img-thumbnail" width="100">
             <h6 class="text">{{ object.content|truncatechars:100 }}</h6>
             <a href="{% url 'news:news_detail' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</a>
         </div>

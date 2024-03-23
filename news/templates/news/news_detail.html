@@ -9,7 +9,7 @@
                 <h4 class="my-0 font-weight-normal">{{ object.title }}</h4>
             </div>
             <div class="card-body">
-                <img src="{{ object.picture  }}" class="img-thumbnail" width="500">
+                <img src="{{ object.picture | mymedia }}" class="img-thumbnail" width="300">
                 <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                     <li>{{ object.content }}</li>
                 </ul>
