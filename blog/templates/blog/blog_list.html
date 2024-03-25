@@ -4,7 +4,7 @@
 {% block content %}
 <div class="row">
     <div class="col-3 mb-4">
-        <a href="{% url 'news:news_create' %}" type="button" class="btn btn-lg btn-block btn-primary">Добавить новость</a>
+        <a href="{% url 'blog:blog_create' %}" type="button" class="btn btn-lg btn-block btn-primary">Добавить новость</a>
     </div>
 </div>
 {% for object in object_list %}
@@ -16,7 +16,7 @@
         <div class="card-body">
             <img src="{{ object.picture | mymedia }}" class="img-thumbnail" width="100">
             <h6 class="text">{{ object.content|truncatechars:100 }}</h6>
-            <a href="{% url 'news:news_detail' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</a>
+            <a href="{% url 'blog:blog_detail' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</a>
         </div>
     </div>
 </div>

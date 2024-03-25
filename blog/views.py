@@ -4,11 +4,11 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
 from pytils.translit import slugify
 
-from news.models import News
+from blog.models import Blog
 
 
-class NewsListView(ListView):
-    model = News
+class BlogListView(ListView):
+    model = Blog
     extra_context = {
         'title': "Новости"
     }
@@ -19,13 +19,13 @@ class NewsListView(ListView):
         return queryset
 
 
-class NewsDetailView(DetailView):
-    model = News
+class BlogDetailView(DetailView):
+    model = Blog
 
     def get_context_data(self, *args, **kwargs):
         context_data = super().get_context_data()
 
-        item = News.objects.get(pk=self.kwargs.get('pk'))
+        item = Blog.objects.get(pk=self.kwargs.get('pk'))
         context_data['title'] = f"{item.title}"
 
         return context_data
@@ -37,12 +37,12 @@ class NewsDetailView(DetailView):
         return self.object
 
 
-class NewsCreateView(CreateView):
-    model = News
+class BlogCreateView(CreateView):
+    model = Blog
     fields = ('title', 'content', 'picture', 'is_published',)
-    success_url = reverse_lazy('news:news_list')
+    success_url = reverse_lazy('blog:blog_list')
     extra_context = {
-        'title': "Добавить новость"
+        'title': "Добавить запись"
     }
 
     def form_valid(self, form):
@@ -53,21 +53,21 @@ class NewsCreateView(CreateView):
         return super().form_valid(form)
 
 
-class NewsUpdateView(UpdateView):
-    model = News
+class BlogUpdateView(UpdateView):
+    model = Blog
     fields = ('title', 'content', 'picture', 'is_published',)
-    success_url = reverse_lazy('news:news_list')
+    success_url = reverse_lazy('blog:blog_list')
     extra_context = {
-        'title': "Изменить новость"
+        'title': "Изменить запись"
     }
 
     def get_success_url(self):
-        return reverse('news:news_detail', args=[self.kwargs.get('pk')])
+        return reverse('blog:blog_detail', args=[self.kwargs.get('pk')])
 
 
-class NewsDeleteView(DeleteView):
-    model = News
-    success_url = reverse_lazy('news:news_list')
+class BlogDeleteView(DeleteView):
+    model = Blog
+    success_url = reverse_lazy('blog:blog_list')
     extra_context = {
-        'title': "Удалить новость"
+        'title': "Удалить запись"
     }

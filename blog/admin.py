@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from news.models import News
+from blog.models import Blog
 
 
-@admin.register(News)
-class NewsAdmin(admin.ModelAdmin):
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'content', 'views_count', 'is_published',)
     list_filter = ('title', 'views_count', 'is_published',)
     search_fields = ('title', 'content',)
