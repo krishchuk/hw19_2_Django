@@ -1,16 +1,28 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
+<div class="row">
+    <div class="col-3 mb-4">
+        <a href="{% url 'catalog:product_create' %}" type="button" class="btn btn-lg btn-block btn-primary">Добавить продукт</a>
+    </div>
+</div>
 {% for object in object_list %}
 <div class="col-3">
-    <div class="card mb-4 box-shadow">
+    <div class="card mb-4 box-shadow text-center">
         <div class="card-header">
             <h4 class="my-0 font-weight-normal">{{ object.name }}</h4>
         </div>
         <div class="card-body">
             <h2 class="card-title pricing-card-title">{{ object.price }} руб.</h2>
-            <h6 class="text">{{ object.description|truncatechars:100 }}</h6>
+            <h6 class="text-start">{{ object.description|truncatechars:100 }}</h6>
             <a href="{% url 'catalog:product' object.pk %}" type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</a>
+        </div>
+        <div class="card-footer text-start">
+            {% if object.active_version %}
+                Версия продукта: {{ object.active_version.version_number }}
+            {% else %}
+                <br>
+            {% endif %}
         </div>
     </div>
 </div>

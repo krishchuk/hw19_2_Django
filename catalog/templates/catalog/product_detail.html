@@ -2,26 +2,52 @@
 {% load my_tags %}
 
 {% block content %}
-
-    <div class="col-12">
+<div class="row text-center">
+    <div class="col-6">
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">{{ object.category }}</h4>
+                <h4 class="my-0 font-weight-normal">Категория "{{ object.category }}"</h4>
             </div>
             <div class="card-body">
                 <img src="{{ object.picture | mymedia }}" class="img-thumbnail" width="500">
                 <h1 class="card-title pricing-card-title">{{ object.name }}.</h1>
                 <h2 class="card-title pricing-card-title">{{ object.price }} руб.</h2>
-                <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                    <li>{{ object.description }}</li>
-                </ul>
+                <h5 class="text-start m-3">{{ object.description }}</h5>
                 <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-body-secondary">Добавлено: {{ object.created_at }}</small>
-                    <button type="button" class="btn btn-lg btn-block btn-primary">Купить</button>
-                    <small class="text-body-secondary">Обновлено: {{ object.updated_at }}</small>
+                    <div class="col-4">
+                        <small class="text-body-secondary">
+                            {% if object.active_version %}
+                                Версия продукта: {{ object.active_version.version_number }}
+                                <br>
+                                "{{ object.active_version.version_name|truncatechars:25 }}"
+                            {% endif %}
+                        </small>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-lg btn-block btn-primary">Купить</button>
+                    </div>
+                    <div class="col-4">
+                        <small class="text-body-secondary">
+                            Добавлено: {{ object.created_at }}
+                            <br>
+                            Обновлено: {{ object.updated_at }}
+                        </small>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="btn-group mb-4 " role="group" aria-label="Basic example">
+            <a href="{% url 'catalog:product_update' object.pk %}" type="button" class="btn btn-block btn-warning">
+                Изменить продукт
+            </a>
+            <a href="{% url 'catalog:product_delete' object.pk %}" type="button" class="btn btn-block btn-danger">
+                Удалить продукт
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

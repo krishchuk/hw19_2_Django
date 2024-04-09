@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <div class="col-12">
+    <div class="col-12 text-center">
         <div class="card mb-4 box-shadow">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">{{ object.title }}</h4>
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div class="col-12">
+    <div class="col-12 text-center">
         <div class="btn-group mb-4 " role="group" aria-label="Basic example">
             <a href="{% url 'blog:blog_update' object.pk %}" type="button" class="btn btn-block btn-warning">Изменить новость</a>
             <a href="{% url 'blog:blog_delete' object.pk %}" type="button" class="btn btn-block btn-danger">Удалить новость</a>

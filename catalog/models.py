@@ -10,7 +10,7 @@ class Category(models.Model):
     description = models.TextField(verbose_name='описание', **NULLABLE)
 
     def __str__(self):
-        return f'Категория: {self.name}'
+        return f'{self.name}'
 
     class Meta:
         verbose_name = 'категория'
@@ -28,9 +28,23 @@ class Product(models.Model):
     updated_at = models.DateField(auto_now=True, verbose_name='дата последнего изменения')
 
     def __str__(self):
-        return f'Продукт: {self.name} ({self.price} руб.)'
+        return f'{self.name}'
 
     class Meta:
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
         ordering = ('name',)
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='продукт')
+    version_number = models.IntegerField(verbose_name='номер версии')
+    version_name = models.CharField(max_length=150, verbose_name='название версии')
+    is_active = models.BooleanField(default=False, verbose_name='активная версия')
+
+    def __str__(self):
+        return f'Версия {self.version_number} ({self.version_name}) продукта {self.product} активна:{self.is_active}'
+
+    class Meta:
+        verbose_name = 'версия'
+        verbose_name_plural = 'версии'
