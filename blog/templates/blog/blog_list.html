@@ -2,11 +2,13 @@
 {% load my_tags %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <div class="row">
     <div class="col-3 mb-4">
         <a href="{% url 'blog:blog_create' %}" type="button" class="btn btn-lg btn-block btn-primary">Добавить новость</a>
     </div>
 </div>
+{% endif %}
 {% for object in object_list %}
 <div class="col-3 text-center">
     <div class="card mb-4 box-shadow">

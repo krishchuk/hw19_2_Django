@@ -1,0 +1,20 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+<form method="post" class="row" action="{% url 'users:confirm' %}">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Подтверждение регистрации</h4>
+            </div>
+            <div class="card-body">
+                {% csrf_token %}
+                <label for="verification_code" class="form-label">Введите код регистрации:</label>
+                <input type="text" id="verification_code" name="verification_code" class="form-control mb-3">
+                <button type="submit" class="btn btn-block btn-success">Завершить регистрацию</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

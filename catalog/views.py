@@ -1,7 +1,7 @@
 import json
 import os
 
-from django import forms
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
@@ -59,7 +59,7 @@ class ContactsView(TemplateView):
         return render(request, 'catalog/contacts.html')
 
 
-class ProductDetailView(DetailView):
+class ProductDetailView(LoginRequiredMixin, DetailView):
     model = Product
 
     def get_context_data(self, *args, **kwargs):
@@ -72,7 +72,7 @@ class ProductDetailView(DetailView):
         return context_data
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForms
     success_url = reverse_lazy('catalog:home')
@@ -96,6 +96,7 @@ class ProductCreateView(CreateView):
         if form.is_valid():
             new_post = form.save()
             new_post.slug = slugify(new_post.name)
+            new_post.owner = self.request.user
             new_post.save()
         context_data = self.get_context_data()
         formset = context_data['formset']
@@ -106,7 +107,7 @@ class ProductCreateView(CreateView):
         return super().form_valid(form)
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
     form_class = ProductForms
     extra_context = {
@@ -126,11 +127,6 @@ class ProductUpdateView(UpdateView):
             formset = VersionFormset(instance=self.object)
         context_data['formset'] = formset
 
-        # product = self.object
-        # active_versions: list = product.version_set.filter(is_active=True)
-        # if len(active_versions) > 1:
-        #     raise forms.ValidationError("Может быть только одна активная версия!")
-
         return context_data
 
     def form_valid(self, form):
@@ -143,11 +139,9 @@ class ProductUpdateView(UpdateView):
         return super().form_valid(form)
 
 
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     success_url = reverse_lazy('catalog:home')
     extra_context = {
         'title': "Удалить продукт"
     }
-
-

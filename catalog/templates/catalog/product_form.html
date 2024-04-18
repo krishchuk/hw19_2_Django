@@ -12,9 +12,9 @@
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-lg btn-block btn-success mb-3">
                     {% if object %}
-                        Изменить
+                    Изменить
                     {% else %}
-                        Добавить
+                    Добавить
                     {% endif %}
                 </button>
                 <div class="col-4">
@@ -31,7 +31,16 @@
             <div class="card-body">
                 {{ formset.management_form }}
                 {% for form in formset.forms %}
-                    {{ form.as_p }}
+                {{ form.as_p }}
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        {% if object.active_version %}
+                            <li>{{ message }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>

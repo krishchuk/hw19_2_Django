@@ -37,23 +37,6 @@ class ProductForms(StyleFormMixin, forms.ModelForm):
 
 
 class VersionForms(StyleFormMixin, forms.ModelForm):
-    # active_versions = []
-
     class Meta:
         model = Version
         fields = "__all__"
-
-    # def get_context(self):
-    #     context = super().get_context()
-    #
-    #     if Version.is_active is True:
-    #         self.active_versions.append(1)
-    #     if len(self.active_versions) > 1:
-    #         raise forms.ValidationError("Может быть только одна активная версия!")
-    #
-    #     # product = Product
-    #     # active_versions: list = product.filter(is_active=True)
-    #     # if len(active_versions) > 1:
-    #     #     raise ValueError("Может быть только одна активная версия!")
-    #
-    #     return context
