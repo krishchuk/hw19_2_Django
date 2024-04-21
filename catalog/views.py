@@ -108,10 +108,10 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class ProductUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
     form_class = ProductForms
-    permission_required = "catalog.change_product"
+    # permission_required = "catalog.change_product"
     extra_context = {
         'title': "Изменить продукт"
     }
@@ -119,7 +119,7 @@ class ProductUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView)
     def get_form_class(self):
         user = self.request.user
         # if user == self.object.owner:
-        if user == self.object.owner and user.has_permission('catalog.change_product'):
+        if user == self.object.owner:
             return ProductForms
         if user.has_perm('catalog.set_published_status'):
             return ProductModeratorForms

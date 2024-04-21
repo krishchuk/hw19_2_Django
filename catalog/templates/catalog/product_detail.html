@@ -39,12 +39,16 @@
         </div>
         <div class="text-end fw-lighter mb-3">Владелец - {{ object.owner }}</div>
         <div class="btn-group mb-3 " role="group" aria-label="Basic example">
+            {% if perms.catalog.change_product or user == product.owner %}
             <a href="{% url 'catalog:product_update' object.pk %}" type="button" class="btn btn-block btn-warning">
                 Изменить продукт
             </a>
+            {% endif %}
+            {% if perms.catalog.delete_product %}
             <a href="{% url 'catalog:product_delete' object.pk %}" type="button" class="btn btn-block btn-danger">
                 Удалить продукт
             </a>
+            {% endif %}
         </div>
     </div>
 </div>
