@@ -1,14 +1,15 @@
 import json
 import os
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
 from catalog.models import Product, Version
-from catalog.forms import ProductForms, VersionForms
+from catalog.forms import ProductForms, VersionForms, ProductModeratorForms
 
 
 class HomeListView(ListView):
@@ -107,12 +108,22 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class ProductUpdateView(LoginRequiredMixin, UpdateView):
+class ProductUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Product
     form_class = ProductForms
+    permission_required = "catalog.change_product"
     extra_context = {
         'title': "Изменить продукт"
     }
+
+    def get_form_class(self):
+        user = self.request.user
+        # if user == self.object.owner:
+        if user == self.object.owner and user.has_permission('catalog.change_product'):
+            return ProductForms
+        if user.has_perm('catalog.set_published_status'):
+            return ProductModeratorForms
+        raise PermissionDenied
 
     def get_success_url(self):
         return reverse('catalog:product', args=[self.kwargs.get('pk')])

@@ -36,6 +36,12 @@ class ProductForms(StyleFormMixin, forms.ModelForm):
         return cleaned_data
 
 
+class ProductModeratorForms(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ('description', 'category', 'is_published',)
+
+
 class VersionForms(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Version
