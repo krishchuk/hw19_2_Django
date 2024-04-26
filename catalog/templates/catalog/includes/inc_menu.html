@@ -5,6 +5,7 @@
     <nav class="ms-5">
         <a class="p-2 btn btn-outline-primary" href="{% url 'blog:blog_list' %}">Новости</a>
         <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:home' %}">Каталог</a>
+        <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:category_list' %}">Категории</a>
         <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:contacts' %}">Контакты</a>
         {% if user.is_authenticated %}
             <img src="{{ user.avatar | mymedia }}" class="rounded float-start" height="40">

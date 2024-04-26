@@ -1,0 +1,29 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+
+<div class="col-2"></div>
+<div class="col-8">
+    <div class="card mb-4 box-shadow">
+        <table class="table table-striped">
+            <thead class="text-center">
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Наименование</th>
+                <th scope="col">Описание</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for object in object_list %}
+            <tr>
+                <td scope="row" class="text-center">{{ object.pk }}</td>
+                <td>{{ object.name }}</td>
+                <td>{{ object.description }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

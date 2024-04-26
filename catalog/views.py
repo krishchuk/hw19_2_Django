@@ -1,15 +1,27 @@
 import json
 import os
 
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Category
 from catalog.forms import ProductForms, VersionForms, ProductModeratorForms
+from catalog.services import get_categories_from_cache, get_products_from_cache
+
+
+class CategoryListView(ListView):
+    model = Category
+    template_name = 'catalog/category_list.html'
+    extra_context = {
+        'title': "Категории"
+    }
+
+    def get_queryset(self):
+        return get_categories_from_cache()
 
 
 class HomeListView(ListView):
@@ -25,6 +37,9 @@ class HomeListView(ListView):
             active_version = product.version_set.filter(is_active=True).last()
             product.active_version = active_version
         return context_data
+
+    def get_queryset(self):
+        return get_products_from_cache()
 
 
 class ContactsView(TemplateView):
